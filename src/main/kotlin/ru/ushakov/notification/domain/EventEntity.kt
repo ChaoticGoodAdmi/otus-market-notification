@@ -13,7 +13,11 @@ data class OrderEventEntity(
     val orderId: String,
     val status: String,
     val eventType: String
-)
+) {
+    constructor() : this(0, "", "", "", "") {
+
+    }
+}
 
 @Entity
 @Table(name = "billing_events")
@@ -23,4 +27,6 @@ data class BillingEventEntity(
     val accountNumber: String,
     val amount: BigDecimal,
     val transactionType: String
-)
+) {
+    constructor() : this(0, "", BigDecimal.ZERO, "")
+}
